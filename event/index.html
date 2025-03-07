@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Event Handling with Alerts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript Event Handling</h1>
+    
+    <div class="container">
+        <!-- Mouse Events -->
+        <div class="card">
+            <h2>Mouse Events</h2>
+            <button id="clickMe">Click Me</button>
+            <button id="dblClickMe">Double Click Me</button>
+            <button id="hoverMe">Hover over me</button>
+            <div id="mouseStatus"></div>
+        </div>
+        
+        <!-- Keyboard Events -->
+        <div class="card">
+            <h2>Keyboard Events</h2>
+            <input type="text" id="keyInput" placeholder="Type a message...">
+            <div id="message"></div>
+        </div>
+
+        <!-- Form Events -->
+        <div class="card">
+            <h2>Form Events</h2>
+            <form id="form">
+                <input type="text" id="formInput" placeholder="Enter Text">
+                <select id="formSelect">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+                <button type="submit">Submit Form</button>
+            </form>
+            <div id="formStatus"></div>
+        </div>
+
+        <!-- Window Events -->
+        <div class="card">
+            <h2>Window Events</h2>
+            <div id="windowStatus">Resize or scroll to trigger events</div>
+        </div>
+
+    </div>
+
+    <!-- Custom Alert Box -->
+    <div id="customAlert" tabindex="0" class="alert">
+        <p id="alertMessage"></p>
+        <button id="closeAlert">Dismiss</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
