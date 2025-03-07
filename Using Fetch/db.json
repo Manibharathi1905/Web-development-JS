@@ -1,0 +1,11 @@
+{
+  "restaurants": [
+    {
+      "name": "On The Rocks Restobar",
+      "location": "Vilankurichi, Coimbatore",
+      "discount": "15% Off",
+      "rating": 4.2,
+      "images": ["restaurant1_1.jpg", "restaurant1_2.jpg", "restaurant1_3.jpg"]
+    }
+  ]
+}

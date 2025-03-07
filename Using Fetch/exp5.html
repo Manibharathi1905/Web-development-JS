@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Finder</title>
+  <link rel="stylesheet" href="exp5styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">FindMyTable</div>
+    <input type="text" class="search-bar" placeholder="Search restaurants...">
+    <div class="login">
+      <button>Login</button>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="banner.jpg" alt="Banner Image">
+    <div class="offer">20% Off Today!</div>
+    <h1>POPULAR RESTAURANT AND CAFE</h1>
+
+  </div>
+  <div class="restaurant-list">
+    <div id="restaurant-grid" class="restaurant-grid">
+      <!-- Restaurant cards will be added here dynamically -->
+    </div>
+  </div>
+
+  <div class="button-section">
+    <div class="button-container">
+      <img src="F:\WD\fetch\mornhead.jpg" alt="Load More 1">
+      <button id="loadMore1">FANCY</button>
+    </div>
+    <div class="button-container">
+      <img src="F:\WD\fetch\ROYAL1.jpg" alt="Load More 2">
+      <button id="loadMore2">ROYAL</button>
+    </div>
+    <div class="button-container">
+      <img src="F:\WD\fetch\pexels-naimbic-2290753.jpg" alt="Load More 3">
+      <button id="loadMore3">ROOFTOP</button>
+    </div>
+    <div class="button-container">
+      <img src="n1.jpg" alt="Load More 4">
+      <button id="loadMore4">NIGHT</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 FindMyTable. All rights reserved. <a href="#">Privacy Policy</a></p>
+  </div>
+
+  <script>
+    const restaurantGrid = document.getElementById('restaurant-grid');
+
+    const loadRestaurants = (restaurants) => {
+      restaurantGrid.innerHTML = '';
+      restaurants.forEach(restaurant => {
+        restaurantGrid.innerHTML += `
+          <div class="restaurant-card">
+            <img src="${restaurant.image}" alt="Restaurant Image">
+            <div class="restaurant-info">
+              <h3>${restaurant.name}</h3>
+              <p class="rating">Rating: ${restaurant.rating} / 5</p>
+              <p>${restaurant.description}</p>
+            </div>
+          </div>
+        `;
+      });
+    };
+
+    const mockData1 = [
+      { name: 'CAFE CUT', rating: 4.5, description: 'Famous for burgers.', image: 'morn 3.jpg' },
+      { name: 'DARKZY', rating: 4.2, description: 'Famous for Chinese.', image: 'FANCY2.jpg' },
+      { name: 'WOODIE', rating: 4.1, description: 'Famous for italian.', image: "FANCY3.jpg" },
+      { name: 'BLACK KING', rating: 4.3, description: 'Famous for thai.', image: 'FANCY4.jpg' },
+      { name: 'SUNRISE', rating: 4.7, description: 'Variety of pizzas.', image: 'morn 4.jpg' }
+    ];
+
+    const mockData2 = [
+      { name: 'CHERAN', rating: 4.8, description: 'Fresh South indian dishes', image: "pexels-pixabay-262047.jpg" },
+      { name: 'CHOLAN', rating: 4.8, description: 'Fresh Doas.', image: 'ROYAL1.jpg' },
+      { name: 'BHARATHI', rating: 4.8, description: 'Variety of Biriyani.', image: 'royal2.jpg' },
+      { name: 'RAJA', rating: 4.8, description: 'Famous for veg.', image: 'royal3.jpg' },
+      { name: 'PANDIYAN', rating: 4.6, description: 'Authentic Indian.', image: 'royal4.jpg' }
+    ];
+
+    const mockData3 = [
+      { name: 'Pasta Bistro', rating: 4.7, description: 'Italian pasta dishes.', image: "pexels-naimbic-2290753.jpg" },
+      { name: 'Itactos', rating: 4.7, description: 'Famous for Chinese', image: 'rf1.jpg' },
+      { name: 'TOCOs', rating: 4.7, description: 'Variety of Biriyani.', image: 'rf2.jpg' },
+      { name: 'Retro', rating: 4.7, description: 'Variety of pizzas.', image: 'rf3.jpg' },
+      { name: 'Mexican Fiesta', rating: 4.5, description: 'Delicious tacos and more.', image: 'rf4.jpg' }
+    ];
+
+    const mockData4 = [
+      { name: 'Nightine', rating: 4.6, description: 'Varirty of Non-veg.', image: 'n1.jpg' },
+      { name: 'Veggie Delight', rating: 4.6, description: 'Healthy vegetarian meals.', image: 'n2.jpg' },
+      { name: 'Sharkzie', rating: 4.6, description: 'Famous for Chinese', image: 'n3.jpg' },
+      { name: 'Blackie', rating: 4.6, description: 'Variety of pizzas', image: 'n4.jpg' },
+      { name: 'Seafood Shack', rating: 4.8, description: 'Fresh seafood dishes.', image: "pexels-amateur-photo-1700447-3356042.jpg" }
+    ];
+
+    document.getElementById('loadMore1').addEventListener('click', () => loadRestaurants(mockData1));
+    document.getElementById('loadMore2').addEventListener('click', () => loadRestaurants(mockData2));
+    document.getElementById('loadMore3').addEventListener('click', () => loadRestaurants(mockData3));
+    document.getElementById('loadMore4').addEventListener('click', () => loadRestaurants(mockData4));
+  </script>
+
+</body>
+</html>
